@@ -10,6 +10,12 @@ Run `ng build` to production build the project. The build artifacts will be stor
 
 ## Deploy
 
-Run `npm run release`
+```
+npm run build
+git add .
+git commit -m "chore: build"
+npm run release or npm run release:patch
+git push --follow-tags origin master
+```
 
 Github pages: https://alcherainc.github.io/frontend-storybook/
