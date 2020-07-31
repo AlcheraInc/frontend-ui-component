@@ -39,7 +39,9 @@
   <!-- Qualification column -->
   <ng-container matColumnDef="qualification">
     <th mat-header-cell *matHeaderCellDef>Required Qualifications</th>
-    <td mat-cell *matCellDef="let element">{{ element.required_qualify }}</td>
+    <td mat-cell *matCellDef="let element">
+      {{ element.required_qualify || element.qualification }}
+    </td>
   </ng-container>
 
   <!-- Company Name column -->

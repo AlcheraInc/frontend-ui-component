@@ -6,9 +6,10 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SharedModule } from "./shared/shared.module";
 import { ButtonComponent } from "./button/button.component";
 import { TableComponent } from "./table/table.component";
+import { DatePickerComponent } from './date-picker/date-picker.component';
 
 @NgModule({
-  declarations: [AppComponent, ButtonComponent, TableComponent],
+  declarations: [AppComponent, ButtonComponent, TableComponent, DatePickerComponent],
   imports: [BrowserModule, BrowserAnimationsModule, SharedModule],
   exports: [SharedModule],
   providers: [],
