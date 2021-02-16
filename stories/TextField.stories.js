@@ -1,5 +1,9 @@
+import Vue from "vue";
+import Vuetify from "vuetify";
 import TextField from "./TextField";
 import { VTextField } from "vuetify/lib";
+
+Vue.use(Vuetify);
 
 export default {
   title: "Text Field",
@@ -14,6 +18,5 @@ const Template = (args, { argTypes }) => ({
 
 export const Outlined = Template.bind({});
 Outlined.args = {
-  isOutlined: true,
-  label: "Outlined"
+  isOutlined: true
 };
