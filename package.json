@@ -24,15 +24,19 @@
     "@storybook/addon-actions": "^6.1.18",
     "@storybook/addon-essentials": "^6.1.18",
     "@storybook/addon-links": "^6.1.18",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/vue": "^6.1.18",
-    "babel-loader": "^8.2.2"
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.2",
+    "sass": "^1.32.7",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0"
   },
   "dependencies": {
     "@storybook/addons": "^6.1.18",
     "exceljs": "^4.2.0",
     "file-saver": "^2.0.5",
-    "sass": "^1.32.7",
-    "sass-loader": "^10.1.1",
+    "moment": "^2.29.1",
     "vue": "^2.6.12",
     "vue-loader": "^15.9.6",
     "vue-template-compiler": "^2.6.12",

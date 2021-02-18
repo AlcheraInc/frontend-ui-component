@@ -4,7 +4,6 @@
 
 <script>
 import { VTextField } from "vuetify/lib";
-import "./textField.css";
 
 export default {
   name: "TextField",
