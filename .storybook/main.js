@@ -4,6 +4,8 @@ module.exports = {
   stories: [
     "../stories/**/*.stories.mdx",
     "../stories/**/*.stories.@(js|jsx|ts|tsx)",
+    "../aiirscan-client/**/*.stories.mdx",
+    "../aiirscan-client/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   addons: [
     "@storybook/preset-scss",

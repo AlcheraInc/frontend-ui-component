@@ -1,12 +1,12 @@
 import Vue from "vue";
 import Vuetify from "vuetify";
-import TextField from "./TextField";
+import TextField from "../stories/TextField";
 import { VTextField } from "vuetify/lib";
 
 Vue.use(Vuetify);
 
 export default {
-  title: "Example/Text Field",
+  title: "aiirscan-client/Text Field",
   component: TextField
 };
 

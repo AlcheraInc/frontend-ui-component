@@ -37,9 +37,3 @@ Small.args = {
   size: "small",
   label: "Button"
 };
-
-export const ExcelDownload = Template.bind({});
-ExcelDownload.args = {
-  label: "Download Excel File",
-  downloadable: true
-};
