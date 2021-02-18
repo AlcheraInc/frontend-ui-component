@@ -3,7 +3,9 @@ const path = require("path");
 module.exports = {
   stories: [
     "../stories/**/*.stories.mdx",
-    "../stories/**/*.stories.@(js|jsx|ts|tsx)"
+    "../stories/**/*.stories.@(js|jsx|ts|tsx)",
+    "../aiirscan-client/**/*.stories.mdx",
+    "../aiirscan-client/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
   // add this function to tweak the webpack config
