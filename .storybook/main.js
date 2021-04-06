@@ -5,22 +5,30 @@ module.exports = {
     "../stories/**/*.stories.mdx",
     "../stories/**/*.stories.@(js|jsx|ts|tsx)",
     "../aiirscan-client/**/*.stories.mdx",
-    "../aiirscan-client/**/*.stories.@(js|jsx|ts|tsx)"
+    "../aiirscan-client/**/*.stories.@(js|jsx|ts|tsx)",
+    "../base-components/**/*.stories.mdx",
+    "../base-components/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   addons: [
     "@storybook/preset-scss",
     "@storybook/addon-links",
-    "@storybook/addon-essentials",
+    "@storybook/addon-essentials"
   ],
   // add this function to tweak the webpack config
   webpackFinal: async (config, { configType }) => {
-    // so I can import { storyFactory } from '~storybook/util/helpers'
-    config.resolve.alias["~storybook"] = path.resolve(__dirname);
-    // the @ alias points to the `src/` directory, a common alias
-    // used in the Vue community
-    config.resolve.alias["@"] = path.resolve(__dirname, "..", "stories");
-
+    config.module.rules.push({
+      resolve: {
+        alias: {
+          "~storybook": path.resolve(__dirname),
+          "@": path.resolve(__dirname, "../stories"),
+          "@@": path.resolve(__dirname, "../src"),
+          ".storybook": path.resolve(__dirname, "../.storybook"),
+          vue: "vue/dist/vue.js",
+          vue$: "vue/dist/vue.esm.js"
+        }
+      }
+    });
     // return the updated Storybook configuration
     return config;
-  },
+  }
 };
