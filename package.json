@@ -36,6 +36,7 @@
     "@storybook/addons": "^6.1.18",
     "exceljs": "^4.2.0",
     "file-saver": "^2.0.5",
+    "material-design-icons-iconfont": "^6.1.0",
     "moment": "^2.29.1",
     "sass": "^1.32.7",
     "sass-loader": "^10.1.1",
