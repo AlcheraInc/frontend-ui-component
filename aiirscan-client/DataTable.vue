@@ -13,18 +13,106 @@
     no-data-text="데이터가 없습니다."
     @item-selected="handleItemSelect($event)"
   >
+    <!-- headers -->
+    <template v-slot:header.empty="{ header }">
+      <div class="d-flex align-center justify-end">
+        <span v-if="['expand', 'download'].includes(header.value)">{{
+          header.text
+        }}</span>
+      </div>
+    </template>
+
+    <!-- header's checkbox -->
+    <template v-slot:header.data-table-select>
+      <div class="data-table__checkbox" @click="checkAllBoxes()">
+        <img
+          :src="selectAllBoxChecked ? iconFilledCheckbox : iconEmptyCheckbox"
+          height="20"
+          width="20"
+          style="cursor: pointer"
+        />
+      </div>
+    </template>
+
+    <!-- item's checkbox -->
+    <template v-slot:item.data-table-select="{ item }">
+      <div class="data-table__checkbox" @click="checkThisBox(item)">
+        <img
+          :src="isCheckedItem(item) ? iconFilledCheckbox : iconEmptyCheckbox"
+          height="20"
+          width="20"
+          style="cursor: pointer"
+        />
+      </div>
+    </template>
+
+    <!-- departments(employees) column -->
+    <template v-slot:item.departments="{ item }">
+      <div>
+        {{ item.departments.map(dept => dept.department_name).join(", ") }}
+      </div>
+    </template>
+
+    <!-- phone number(employees) column -->
+    <template v-slot:item.phoneNumber="{ item }">
+      <div>
+        {{
+          !item.phoneNumber.includes("-")
+            ? formatPhoneNumber(item.phoneNumber)
+            : item.phoneNumber
+        }}
+      </div>
+    </template>
+
+    <!-- face photo(employees) column -->
+    <template v-slot:item.facePhoto="{ item }">
+      <div>
+        <img
+          :src="
+            !!item.face && item.face !== '' ? iconHasFacePhoto : iconNoFacePhoto
+          "
+          :style="!!item.face && item.face !== '' ? 'cursor: pointer' : ''"
+          @click="clickPreviewFacePhoto(item.face)"
+        />
+      </div>
+    </template>
+
+    <!-- download column -->
+    <template v-slot:item.download="{ item }">
+      <img
+        v-if="item.logs && item.logs.length"
+        :src="require('@/assets/icon_download_blue.svg')"
+        style="cursor: pointer"
+        @click="clickDownload(item)"
+      />
+      <img v-else :src="require('@/assets/icon_download_grey.svg')" />
+    </template>
+
+    <!-- memberCount(department) column -->
+    <template v-slot:item.count="{ item }">
+      <div>
+        {{ item.count + "명" }}
+      </div>
+    </template>
+
+    <!-- expand slot -->
+    <template v-slot:expanded-item="{ headers, item }">
+      <td :colspan="headers.length" class="commute-expand-table__container">
+        <commute-expand-subtable :items="item.logs" />
+      </td>
+    </template>
   </v-data-table>
 </template>
 
 <script>
 import { VDataTable } from "vuetify/lib";
-// import ExpandSubtable from './CommuteExpandSubtable'
+import CommuteExpandSubtable from "./CommuteExpandSubtable";
 
 export default {
   name: "ExpandTable",
   components: {
-    VDataTable
-    // ExpandSubtable,
+    VDataTable,
+    CommuteExpandSubtable
   },
   props: {
     type: {
@@ -265,45 +353,28 @@ export default {
     clickDownload(item) {
       this.$emit("commute-expand-table", item);
     },
-    checkThisBox(item) {
-      // if (this.$route.name === "Employee") {
-      //   this.$store.commit("checkEmployee", item.id);
-      // } else if (this.$route.name === "Department") {
-      //   this.$store.commit("checkDepartment", item.id);
+    isCheckedItem(item) {
+      // if (this.type === 'employee') {
+      //   return !!this.selectedEmployeeIdMap[item.id]
       // }
-      // this.checkCheckAllBoxes();
-    },
-    checkCheckAllBoxes() {
-      // if (this.isCheckAllBoxes()) {
-      //   this.selectAllBoxChecked = true;
-      // } else {
-      //   this.selectAllBoxChecked = false;
-      // }
-    },
-    isCheckAllBoxes() {
-      // let checkedList = this.tableData.filter(c => c.isChecked);
-      // return this.tableData.length
-      //   ? this.tableData.length === checkedList.length
-      //   : false;
+      // return !!this.selectedDepartmentIdMap[item.id]
       return false;
     },
+    checkThisBox(item) {
+      // this.$store.dispatch(`select${this.$route.name}`, item.id)
+      console.debug("checkThisBox ", item);
+    },
     checkAllBoxes() {
-      // for (let i = 0; i < this.tableData.length; i += 1) {
-      //   if (this.selectAllBoxChecked && this.tableData[i].isChecked) {
-      //     if (this.$route.name === "Employee") {
-      //       this.$store.commit("checkEmployee", this.tableData[i].id);
-      //     } else if (this.$route.name === "Department") {
-      //       this.$store.commit("checkDepartment", this.tableData[i].id);
-      //     }
-      //   } else if (!this.selectAllBoxChecked && !this.tableData[i].isChecked) {
-      //     if (this.$route.name === "Employee") {
-      //       this.$store.commit("checkEmployee", this.tableData[i].id);
-      //     } else if (this.$route.name === "Department") {
-      //       this.$store.commit("checkDepartment", this.tableData[i].id);
+      // if (!this.selectAllBoxChecked) {
+      //   for (let i = 0; i < this.tableData.length; i += 1) {
+      //     if (!this.selectedItems.includes(Number(this.tableData[i].id))) {
+      //       this.$store.dispatch(`select${this.$route.name}`, this.tableData[i].id)
       //     }
       //   }
+      // } else {
+      //   this.$store.commit(`clearCheck${this.$route.name}`)
       // }
-      // this.selectAllBoxChecked = !this.selectAllBoxChecked;
+      console.debug("checkAllBoxes");
     }
   }
 };
