@@ -1,7 +1,7 @@
 import Calendar from "./Calendar.vue";
 
 export default {
-  title: "Example/Calendar",
+  title: "aiirscan-client/Calendar",
   component: Calendar,
   argTypes: { update: { action: "update" } }
 };
