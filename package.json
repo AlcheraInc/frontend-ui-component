@@ -21,11 +21,11 @@
   "homepage": "https://github.com/AlcheraInc/frontend-storybook#readme",
   "devDependencies": {
     "@babel/core": "^7.12.16",
-    "@storybook/addon-actions": "^6.1.18",
-    "@storybook/addon-essentials": "^6.1.18",
-    "@storybook/addon-links": "^6.1.18",
+    "@storybook/addon-actions": "^6.2.4",
+    "@storybook/addon-essentials": "^6.2.4",
+    "@storybook/addon-links": "^6.2.4",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/vue": "^6.1.18",
+    "@storybook/vue": "^6.2.4",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.2",
     "sass": "^1.32.7",
@@ -33,7 +33,7 @@
     "style-loader": "^2.0.0"
   },
   "dependencies": {
-    "@storybook/addons": "^6.1.18",
+    "@storybook/addons": "^6.2.4",
     "exceljs": "^4.2.0",
     "file-saver": "^2.0.5",
     "material-design-icons-iconfont": "^6.1.0",
