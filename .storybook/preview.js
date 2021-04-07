@@ -52,6 +52,62 @@ export const parameters = {
       {
         color: "#0000001E",
         title: "Transparent_Grey_01"
+      },
+      {
+        color: "#00000042",
+        title: "Transparent_Grey_02"
+      },
+      {
+        color: "#00000060",
+        title: "Transparent_Grey_03"
+      },
+      {
+        color: "#F7F7F7",
+        title: "Grey_01"
+      },
+      {
+        color: "#D8D9DA",
+        title: "Grey_02"
+      },
+      {
+        color: "#363636",
+        title: "Grey_03"
+      },
+      {
+        color: "#1D1D1D",
+        title: "Grey_04"
+      },
+      {
+        color: "#D3D5DD",
+        title: "Cool_Grey_01"
+      },
+      {
+        color: "#8D90A2",
+        title: "Cool_Grey_02"
+      },
+      {
+        color: "#43425D",
+        title: "Cool_Grey_03"
+      },
+      {
+        color: "#74E08F",
+        title: "Light_Green"
+      },
+      {
+        color: "#34C759",
+        title: "Green"
+      },
+      {
+        color: "#FF6A6A",
+        title: "Light_Red"
+      },
+      {
+        color: "#FF3B30",
+        title: "Red"
+      },
+      {
+        color: "#3B77FF",
+        title: "Highlight_Blue"
       }
     ]
   }
