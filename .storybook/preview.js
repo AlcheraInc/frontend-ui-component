@@ -42,7 +42,7 @@ export const parameters = {
         title: "Alchera White"
       },
       {
-        color: "##FF4E00",
+        color: "#FF4E00",
         title: "Alchera Orange"
       },
       {
@@ -110,6 +110,58 @@ export const parameters = {
         title: "Highlight_Blue"
       }
     ]
+  }
+};
+
+export const colors = {
+  // brand color
+  alcheradreamblue: "#528CFF",
+  alcheramodernblue: "#406EFF",
+  alcheradeepblue: "#5B63F3",
+  alcherawhite: "#FCFCFC",
+  alcheraorange: "#FF4E00",
+  alcherablue: "#004BA0",
+  // greyscale
+  transparentgrey01: "#0000001E",
+  transparentgrey02: "#00000042",
+  transparentgrey03: "#00000060",
+  grey01: "#F7F7F7",
+  grey02: "#D8D9DA",
+  grey03: "#363636",
+  grey04: "#1D1D1D",
+  coolgrey01: "#D3D5DD",
+  coolgrey02: "#8D90A2",
+  coolgrey03: "#43425D",
+  // sub color
+  lightgreen: "#74E08F",
+  green: "#34C759",
+  lightred: "#FF6A6A",
+  red: "#FF3B30",
+  highlightblue: "#3B77FF"
+};
+
+export const typography = {
+  type: {
+    avenirnext: '"Avenir Next"',
+    nunitosans: '"Nunito Sans"',
+    notosanskr: '"Noto Sans KR"'
+  },
+  weight: {
+    regular: "400",
+    bold: "700",
+    extrabold: "800",
+    black: "900"
+  },
+  size: {
+    s1: 12,
+    s2: 14,
+    s3: 16,
+    m1: 20,
+    m2: 24,
+    m3: 28,
+    l1: 32,
+    l2: 40,
+    l3: 48
   }
 };
 

@@ -43,7 +43,7 @@ export default {
     imgSrc: {
       description: '"src" attribute for icon slot when using asset file',
       control: {
-        type: "radio",
+        type: "select",
         options: [
           require("../stories/assets/icon_magnify_grey.svg"),
           require("../stories/assets/icon_pencil_blue.svg"),
@@ -65,7 +65,7 @@ export default {
       description:
         "Preset button settings to be set by developer for code reuse.<br>Editable in ButtonWrapper.vue.",
       control: {
-        type: "radio",
+        type: "select",
         options: ["login", "select-mobile", "delete-mobile"]
       }
     },
@@ -96,7 +96,7 @@ export default {
     type: {
       description: "type of button",
       control: {
-        type: "radio",
+        type: "select",
         options: ["button", "reset", "submit"]
       }
     },

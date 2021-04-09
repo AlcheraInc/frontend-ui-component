@@ -70,7 +70,7 @@ export default {
     type: {
       description: "sets input type",
       control: {
-        type: "radio",
+        type: "select",
         options: [
           "button",
           "checkbox",

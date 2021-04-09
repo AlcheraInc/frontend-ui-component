@@ -7,7 +7,9 @@ module.exports = {
     "../aiirscan-client/**/*.stories.mdx",
     "../aiirscan-client/**/*.stories.@(js|jsx|ts|tsx)",
     "../base-components/**/*.stories.mdx",
-    "../base-components/**/*.stories.@(js|jsx|ts|tsx)"
+    "../base-components/**/*.stories.@(js|jsx|ts|tsx)",
+    "../shimizu-client/**/*.stories.mdx",
+    "../shimizu-client/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   addons: [
     "@storybook/preset-scss",
