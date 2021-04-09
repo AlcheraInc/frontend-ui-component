@@ -2,6 +2,7 @@ const path = require("path");
 
 module.exports = {
   stories: [
+    "../stories/Introduction.stories.mdx",
     "../stories/**/*.stories.mdx",
     "../stories/**/*.stories.@(js|jsx|ts|tsx)",
     "../aiirscan-client/**/*.stories.mdx",
