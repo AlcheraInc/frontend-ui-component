@@ -2,7 +2,7 @@ import BaseTextField from "./BaseTextField.vue";
 import Vue from "vue";
 
 export default {
-  title: "basics/TextField",
+  title: "basics/Text Field",
   parameters: {
     docs: {
       description: {
@@ -24,8 +24,20 @@ export default {
         type: "boolean"
       }
     },
+    clearable: {
+      description: "adds input clear functionality",
+      control: {
+        type: "boolean"
+      }
+    },
     dense: {
       description: "dense style",
+      control: {
+        type: "boolean"
+      }
+    },
+    disabled: {
+      description: "disables user interaction with component",
       control: {
         type: "boolean"
       }
@@ -107,6 +119,10 @@ export default {
   }
 };
 
+const requiredInput = function(val) {
+  return val.length < 1 ? "Error" : "";
+};
+
 const requiredID = function(val) {
   return val.length < 1 ? "아이디를 입력해 주세요." : "";
 };
@@ -120,6 +136,15 @@ const Template = (args, { argTypes }) => ({
   components: { BaseTextField },
   template: '<v-app><BaseTextField v-bind="$props" /></v-app>'
 });
+
+export const Basic = Template.bind({});
+Basic.args = {
+  autofocus: true,
+  color: "#1976d2",
+  placeholder: "Label",
+  rules: [requiredInput],
+  type: "text"
+};
 
 export const Username = Template.bind({});
 Username.args = {

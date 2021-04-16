@@ -66,7 +66,15 @@ export default {
         "Preset button settings to be set by developer for code reuse.<br>Editable in ButtonWrapper.vue.",
       control: {
         type: "select",
-        options: ["login", "select-mobile", "delete-mobile"]
+        options: [
+          "login",
+          "select-mobile",
+          "delete-mobile",
+          "default",
+          "danger",
+          "primary",
+          "solid"
+        ]
       }
     },
     rounded: {
@@ -121,6 +129,43 @@ const Template = (args, { argTypes }) => ({
   template: '<ButtonWrapper v-bind="$props" />'
 });
 
+export const ButtonDefault = Template.bind({});
+ButtonDefault.args = {
+  color: "#d8d9da",
+  height: "40px",
+  // prebuiltStyle: "default",
+  text: "Button",
+  textColor: "#43425d",
+  width: "120px"
+};
+
+export const ButtonDanger = Template.bind({});
+ButtonDanger.args = {
+  color: "#ff6a6a",
+  height: "40px",
+  // prebuiltStyle: "danger",
+  text: "Button",
+  width: "120px"
+};
+
+export const ButtonPrimary = Template.bind({});
+ButtonPrimary.args = {
+  color: "#3b77ff",
+  height: "40px",
+  // prebuiltStyle: "primary",
+  text: "Button",
+  width: "120px"
+};
+
+export const ButtonSolid = Template.bind({});
+ButtonSolid.args = {
+  color: "#3a7bc6",
+  height: "40px",
+  // prebuiltStyle: "solid",
+  text: "Button",
+  width: "120px"
+};
+
 export const DesktopButton = Template.bind({});
 DesktopButton.args = {
   color: "#3774ff",
@@ -132,6 +177,7 @@ DesktopButton.args = {
 
 export const MobileButton = Template.bind({});
 MobileButton.args = {
+  depressed: true,
   height: "32px",
   rounded: true,
   text: "추가",

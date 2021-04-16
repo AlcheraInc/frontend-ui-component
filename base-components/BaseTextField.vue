@@ -2,8 +2,11 @@
   <v-text-field
     v-model="text"
     :autofocus="autofocus"
+    :clearable="clearable"
+    clear-icon="cancel"
     :color="color"
     :dense="dense"
+    :disabled="disabled"
     :height="height"
     :label="label"
     :name="name"
@@ -26,11 +29,21 @@ export default {
       required: false,
       default: false
     },
+    clearable: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     color: {
       type: String,
       required: false
     },
     dense: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    disabled: {
       type: Boolean,
       required: false,
       default: false

@@ -1,6 +1,7 @@
 <template>
   <BaseTextField
     dense
+    :color="color"
     :height="height"
     :label="label"
     :outlined="outlined"
@@ -23,6 +24,10 @@ export default {
     BaseTextField
   },
   props: {
+    color: {
+      type: String,
+      required: false
+    },
     height: {
       type: [Number, String],
       required: false
