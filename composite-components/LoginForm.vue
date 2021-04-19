@@ -1,6 +1,7 @@
 <template>
   <v-form ref="formRef" v-model="valid" class="login-form">
     <BaseTextField
+      autofocus
       color="#406eff"
       placeholder="ID"
       :rules="[required]"

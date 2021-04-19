@@ -6,7 +6,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: "form component examples to exemplify component modularity"
+        component: "composite component that allows users to log in"
       }
     }
   },
