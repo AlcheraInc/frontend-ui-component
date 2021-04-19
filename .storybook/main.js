@@ -9,6 +9,8 @@ module.exports = {
     "../aiirscan-client/**/*.stories.@(js|jsx|ts|tsx)",
     "../base-components/**/*.stories.mdx",
     "../base-components/**/*.stories.@(js|jsx|ts|tsx)",
+    "../composite-components/**/*.stories.mdx",
+    "../composite-components/**/*.stories.@(js|jsx|ts|tsx)",
     "../shimizu-client/**/*.stories.mdx",
     "../shimizu-client/**/*.stories.@(js|jsx|ts|tsx)"
   ],
