@@ -43,6 +43,11 @@ export default {
       required: false,
       default: "#406eff"
     },
+    dateFormat: {
+      type: String,
+      required: false,
+      default: "YYYY-MM-DD"
+    },
     disabled: {
       type: Boolean,
       required: false,
@@ -52,11 +57,6 @@ export default {
       type: Boolean,
       required: false,
       default: false
-    },
-    dateFormat: {
-      type: String,
-      required: false,
-      default: "YYYY-MM-DD"
     },
     locale: {
       type: String,

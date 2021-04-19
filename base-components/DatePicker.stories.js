@@ -2,7 +2,7 @@ import BaseDatePicker from "./BaseDatePicker.vue";
 import Vue from "vue";
 
 export default {
-  title: "basics/DatePicker",
+  title: "basics/Date Picker",
   parameters: {
     docs: {
       description: {
@@ -17,6 +17,12 @@ export default {
       description: "color of date picker component",
       control: {
         type: "color"
+      }
+    },
+    dateFormat: {
+      description: "changes text field display value format",
+      control: {
+        type: "String"
       }
     },
     disabled: {
