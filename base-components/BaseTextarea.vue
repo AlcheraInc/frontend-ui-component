@@ -1,28 +1,26 @@
 <template>
-  <v-text-field
+  <v-textarea
     v-model="text"
     :autofocus="autofocus"
     :clearable="clearable"
-    clear-icon="cancel"
     :color="color"
     :dense="dense"
     :disabled="disabled"
     :height="height"
     :label="label"
-    :name="name"
     :outlined="outlined"
     :placeholder="placeholder"
-    :prepend-inner-icon="prependInnerIcon"
+    :readonly="readonly"
+    :rounded="rounded"
     :rules="rules"
     :type="type"
     :width="width"
-    @keyup="$emit('change-base-text-field', text)"
   />
 </template>
 
 <script>
 export default {
-  name: "BaseTextField",
+  name: "BaseTextarea",
   props: {
     autofocus: {
       type: Boolean,
@@ -48,19 +46,14 @@ export default {
       required: false,
       default: false
     },
-    label: {
-      type: String,
-      required: false,
-      default: ""
-    },
     height: {
       type: [Number, String],
       required: false
     },
-    name: {
+    label: {
       type: String,
       required: false,
-      default: "TextField"
+      default: ""
     },
     outlined: {
       type: Boolean,
@@ -72,10 +65,15 @@ export default {
       required: false,
       default: ""
     },
-    prependInnerIcon: {
-      type: String,
+    readonly: {
+      type: Boolean,
       required: false,
-      default: ""
+      default: false
+    },
+    rounded: {
+      type: Boolean,
+      required: false,
+      default: false
     },
     rules: {
       type: Array,

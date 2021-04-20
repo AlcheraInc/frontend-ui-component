@@ -1,23 +1,17 @@
-import BaseTextField from "./BaseTextField.vue";
+import BaseTextarea from "./BaseTextarea.vue";
 import Vue from "vue";
 
 export default {
-  title: "basics/Text Field",
+  title: "basics/Textarea",
   parameters: {
     docs: {
       description: {
-        component: "Input field to enter text characters with"
+        component: "Input field with lines and expandable size"
       }
     }
   },
-  component: BaseTextField,
+  component: BaseTextarea,
   argTypes: {
-    color: {
-      description: "color of component",
-      control: {
-        type: "color"
-      }
-    },
     autofocus: {
       description: "focus on component on first load",
       control: {
@@ -28,6 +22,12 @@ export default {
       description: "adds input clear functionality",
       control: {
         type: "boolean"
+      }
+    },
+    color: {
+      description: "color of component",
+      control: {
+        type: "color"
       }
     },
     dense: {
@@ -66,10 +66,16 @@ export default {
         type: "text"
       }
     },
-    prependInnerIcon: {
-      description: "name of icon in prepend-inner slot",
+    readonly: {
+      description: "prevents user input but not in disabled state",
       control: {
-        type: "text"
+        type: "boolean"
+      }
+    },
+    rounded: {
+      description: "gives component borders a rounded style",
+      control: {
+        type: "boolean"
       }
     },
     rules: {
@@ -123,51 +129,16 @@ const requiredInput = function(val) {
   return val.length < 1 ? "Error" : "";
 };
 
-const requiredID = function(val) {
-  return val.length < 1 ? "아이디를 입력해 주세요." : "";
-};
-
-const requiredPW = function(val) {
-  return val.length < 1 ? "비밀번호를 입력해 주세요." : "";
-};
-
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { BaseTextField },
-  template: '<v-app><BaseTextField v-bind="$props" /></v-app>'
+  components: { BaseTextarea },
+  template: '<v-app><BaseTextarea v-bind="$props" /></v-app>'
 });
 
 export const Basic = Template.bind({});
 Basic.args = {
   autofocus: true,
   color: "#1976d2",
-  placeholder: "Label",
-  rules: [requiredInput],
-  type: "text"
-};
-
-export const Username = Template.bind({});
-Username.args = {
-  autofocus: true,
-  color: "#000000",
-  placeholder: "아이디",
-  rules: [requiredID],
-  type: "text"
-};
-
-export const Password = Template.bind({});
-Password.args = {
-  color: "#000000",
-  placeholder: "비밀번호",
-  rules: [requiredPW],
-  type: "password"
-};
-
-export const Search = Template.bind({});
-Search.args = {
-  color: "#000000",
-  dense: true,
-  placeholder: "Search",
-  prependInnerIcon: "search",
-  type: "text"
+  placeholder: "Enter input here",
+  rules: [requiredInput]
 };

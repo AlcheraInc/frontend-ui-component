@@ -7,3 +7,15 @@
 .sb-errordisplay {
   display: none !important;
 }
+
+.v-btn--is-elevated {
+  box-shadow: 1px 4px 8px #00000042 !important;
+}
+
+.toast-tall > div.v-snack__wrapper {
+  height: 80px;
+}
+
+.toast-short > div.v-snack__wrapper {
+  height: 60px;
+}

@@ -1,21 +1,24 @@
 <template>
-  <BaseButton
-    :color="buttonStyle.color || color"
-    :depressed="depressed"
-    :disabled="disabled"
-    :height="buttonStyle.height || height"
-    :img-src="imgSrc"
-    :loading="loading"
-    :outlined="buttonStyle.outlined || outlined"
-    :rounded="rounded"
-    :text="text"
-    :text-color="buttonStyle.textColor || textColor"
-    :text-size="buttonStyle.textSize || textSize"
-    :type="type"
-    :v-icon-name="buttonStyle.vIconName || vIconName"
-    :width="buttonStyle.width || width"
-    @click-base-button="$emit('click-button-wrapper')"
-  />
+  <v-hover v-slot:default="{ hover }" :disabled="disabled">
+    <BaseButton
+      :color="buttonStyle.color || color"
+      :depressed="(buttonStyle.depressed || depressed) && !hover"
+      :disabled="disabled"
+      :elevation="hover ? 24 : 0"
+      :height="buttonStyle.height || height"
+      :img-src="imgSrc"
+      :loading="loading"
+      :outlined="buttonStyle.outlined || outlined"
+      :rounded="rounded"
+      :text="text"
+      :text-color="buttonStyle.textColor || textColor"
+      :text-size="buttonStyle.textSize || textSize"
+      :type="type"
+      :v-icon-name="buttonStyle.vIconName || vIconName"
+      :width="buttonStyle.width || width"
+      @click-base-button="$emit('click-button-wrapper')"
+    />
+  </v-hover>
 </template>
 
 <script>
@@ -52,6 +55,10 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    elevation: {
+      type: [Number, String],
+      required: false
     },
     height: {
       type: [Number, String],
@@ -116,6 +123,11 @@ export default {
     this.applyPrebuiltStyle();
   },
   watch: {
+    color(newVal, oldVal) {
+      if (newVal !== oldVal) {
+        this.applyPrebuiltStyle();
+      }
+    },
     disabled(newVal, oldVal) {
       if (newVal !== oldVal) {
         this.applyPrebuiltStyle();
@@ -193,6 +205,50 @@ export default {
             color: this.disabled ? "#0000001f" : "#ea5151",
             textColor: this.disabled ? "#00000042" : "#ea5151",
             outlined: !this.disabled
+          };
+        case "default":
+          this.buttonStyle = {
+            color: this.hover
+              ? "#d1d4d8"
+              : this.disabled
+              ? "#0000001f"
+              : "#d8d9da",
+            height: "40px",
+            textColor: this.disabled ? "#00000042" : "#43425d",
+            width: "120px"
+          };
+        case "danger":
+          this.buttonStyle = {
+            color: this.hover
+              ? "#ef5a5a"
+              : this.disabled
+              ? "0000001f"
+              : "#ff6a6a",
+            height: "40px",
+            textColor: this.disabled ? "#00000042" : "#ffffff",
+            width: "120px"
+          };
+        case "primary":
+          this.buttonStyle = {
+            color: this.hover
+              ? "#2668ff"
+              : this.disabled
+              ? "0000001f"
+              : "#3b77ff",
+            height: "40px",
+            textColor: this.disabled ? "#00000042" : "#ffffff",
+            width: "120px"
+          };
+        case "solid":
+          this.buttonStyle = {
+            color: this.hover
+              ? "#2c6eba"
+              : this.disabled
+              ? "0000001f"
+              : "#3a7bc6",
+            height: "40px",
+            textColor: this.disabled ? "#00000042" : "#ffffff",
+            width: "120px"
           };
         default:
           break;

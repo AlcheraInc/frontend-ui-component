@@ -18,6 +18,7 @@
     :item-icon-color="itemIconColor"
     :item-icon-selected="itemIconSelected"
     :item-icon-unselected="itemIconUnselected"
+    :rules="[rules.required]"
     v-model="selectedItem"
     @change="emitChange()"
   >
@@ -34,8 +35,9 @@
       <SearchTextField
         v-if="searchOption"
         class="search-text-field"
+        color="grey"
         :outlined="false"
-        placeholder="Search"
+        placeholder="검색"
         :value.sync="search"
         @search-input="search = $event"
       />
@@ -158,6 +160,9 @@ export default {
   },
   data: () => {
     return {
+      rules: {
+        required: val => val.length > 0 || "Error"
+      },
       search: "",
       selectedItem: []
     };

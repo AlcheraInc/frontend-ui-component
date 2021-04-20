@@ -126,8 +126,47 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { BaseSelect },
-  template: '<v-app><BaseSelect v-bind="$props" /></v-app>'
+  template:
+    '<v-app><BaseSelect v-bind="$props" /><v-btn style="margin-top:140px">Hide Dropdown</v-btn></v-app>'
 });
+
+export const SelectNormal = Template.bind({});
+SelectNormal.args = {
+  color: "#1976d2",
+  dense: true,
+  label: "Label",
+  itemColor: "#1976d2",
+  itemIconColor: "#528cff",
+  itemIconSelected: "check_box",
+  itemIconUnselected: "check_box_outline_blank",
+  items: [
+    {
+      text: "Gate 1",
+      value: "Gate 1"
+    },
+    {
+      text: "Gate 2",
+      value: "Gate 2"
+    },
+    {
+      text: "Gate 3",
+      value: "Gate 3"
+    },
+    {
+      text: "Gate 4",
+      value: "Gate 4"
+    }
+  ],
+  itemText: "text",
+  itemValue: "value",
+  menuProps: {
+    top: false,
+    maxHeight: "152",
+    offsetY: true
+  },
+  multiple: true,
+  searchOption: true
+};
 
 export const HealthCheck = Template.bind({});
 HealthCheck.args = {
