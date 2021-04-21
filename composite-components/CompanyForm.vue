@@ -1,5 +1,5 @@
 <template>
-  <v-form ref="formRef" v-model="valid" class="login-form">
+  <v-form ref="formRef" v-model="valid" class="company-form">
     <div class="row">
       <div class="section">
         <div class="section-title">Company Name</div>
@@ -36,6 +36,7 @@
             color="#406eff"
             outlined
             placeholder="50 character max"
+            :rules="[max50char]"
           />
         </div>
       </div>
@@ -46,6 +47,7 @@
             color="#406eff"
             outlined
             placeholder="100 character max"
+            :rules="[max100char]"
           />
         </div>
       </div>
@@ -77,15 +79,16 @@ export default {
       phoneNumber: "",
       qualifications: "",
       memo: "",
-      required: val => val.length > 1 || "Required"
+      required: val => val.length > 1 || "Required",
+      max50char: val => val.length < 51 || "50 character max",
+      max100char: val => val.length < 101 || "100 character max"
     };
   }
 };
 </script>
 
 <style scoped>
-.login-form {
-  border: 1px solid black;
+.company-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
