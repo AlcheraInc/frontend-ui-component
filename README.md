@@ -18,3 +18,4 @@ git push
 ```
 
 Github pages: https://alcherainc.github.io/frontend-storybook/
+Design pages: https://design.alcherainc.com/
