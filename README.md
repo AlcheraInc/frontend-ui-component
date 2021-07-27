@@ -17,5 +17,5 @@ git commit -m "chore(build): update"
 git push
 ```
 
-Github pages: https://alcherainc.github.io/frontend-storybook/
+Github pages: https://alcherainc.github.io/frontend-ui-component/
 Design pages: https://design.alcherainc.com/
