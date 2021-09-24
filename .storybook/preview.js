@@ -1,3 +1,13 @@
+// export const parameters = {
+//   actions: { argTypesRegex: "^on[A-Z].*" },
+//   controls: {
+//     matchers: {
+//       color: /(background|color)$/i,
+//       date: /Date$/,
+//     },
+//   },
+// }
+
 import vuetifyConfig from "./vuetify_storybook";
 import "vuetify/dist/vuetify.css";
 require("./vuetify_style.scss");

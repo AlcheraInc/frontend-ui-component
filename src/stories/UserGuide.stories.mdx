@@ -1,0 +1,79 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import CanvasExample from "./assets/canvas_example.png";
+import ControlsBoolean from "./assets/controls_boolean.png";
+import ControlsColor from "./assets/controls_color.png";
+import SidebarSelection from "./assets/sidebar_selection.png";
+import TopOptionsBar from "./assets/top_options_bar.png";
+
+<Meta title="User Guide" />
+
+<!-- DO NOT REMOVE THIS COMMENT -->
+
+<style>{`
+  .subheading {
+    --mediumdark: '#999999';
+    font-weight: 900;
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 6px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+
+`}</style>
+
+# User Guide
+
+<div className="subheading">1. Component Selection</div>
+
+Click on any one of the expandable list items or standalone components in the sidebar to see its details.
+
+(Shortcut Key) Press "s" to hide/show the sidebar.
+
+<img src={SidebarSelection} alt="sidebar selection" />
+<div className="subheading">2. Canvas</div>
+
+The default view state for inspecting Storybook components is named "Canvas".
+You can switch between it and the other mode "Docs" at the top options bar as
+seen below.
+
+<img src={TopOptionsBar} alt="top options bar" />
+
+To the right of the view state selection are visual options (i.e.- zoom level, background color, etc.)
+They can be adjusted per user needs to change the way the rendering window as seen below:
+
+<img src={CanvasExample} alt="canvas example" />
+
+The selected component should be rendered accordingly in this window and is fully interactable to test
+and visualize how it would be seen in the interface of the production build.
+
+<div className="subheading">3. Addons</div>
+
+The addons feature provides an interactable interface to observe changes at runtime when altering
+one or more properties for a component.
+
+The "Controls" tab shows a list of all props and events that are associated with the selected component.
+Each prop has a "control" that can be interacted with to change the inputted data, whether that be value
+or format.
+Depending on the designated data type, each prop has a specific UI that allows for ease of change.
+
+For example:
+
+Boolean values have a clickable toggle.
+
+<img src={ControlsBoolean} alt="boolean toggle" />
+
+While the data type can be set to accept strings, the storybook may set its control to be that of a
+dropdown list or radio buttons to provide preset options.
+For a prop that takes a string value for color as input, a special swatch control is used.
+The bottom portion of this control is populated with preset colors that are primarily shown in
+Alchera-affiliated UIs.
+
+(Shortcut Key) Press "a" to hide/show addons.
+
+<img src={ControlsColor} alt="color swatch" />
+
+Below the list of props are all "events" that are emitted when certain conditions are met.
+These events should be detected by an event listener when it is utilized in a project.
