@@ -10,12 +10,19 @@ Run `npm run build-storybook` to production build the project. The build artifac
 
 ## Deploy
 
+Run `npm run deploy-storybook` to manually deploy the project on github pages.
+
+Otherwise, if changes are made under `stories/**` and/or `src/**` and pushed to `master` branch, github actions will automatically build and deploy.
+
+## NPM Publish
+
 ```
-npm run build-storybook
-git add .
-git commit -m "chore(build): update"
-git push
+npm version patch
+git push --tags origin master
 ```
 
 Github pages: https://alcherainc.github.io/frontend-ui-component/
+
 Design pages: https://design.alcherainc.com/
+
+NPM pages: https://www.npmjs.com/package/alchera-ui-component
