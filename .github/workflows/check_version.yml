@@ -9,4 +9,4 @@ jobs:
       - name: Check package version
         uses: technote-space/package-version-check-action@v1
         with:
-          BRANCH_PREFIX: relase/
+          BRANCH_PREFIX: release/
