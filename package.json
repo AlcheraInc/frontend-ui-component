@@ -1,6 +1,6 @@
 {
   "name": "alchera-ui-component",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "dist/alchera-ui-component.ssr.js",
   "browser": "dist/alchera-ui-component.esm.js",
